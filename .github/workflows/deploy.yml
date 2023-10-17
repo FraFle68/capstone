@@ -37,7 +37,7 @@ jobs:
           name: frontend-build
           path: backend/src/main/resources/static
       - name: build-backend
-        run: mvn -B package--file backend/pom.xml
+        run: mvn -B package --file backend/pom.xml
       - uses: actions/upload-artifact@v2
         with:
           name: backend-build
