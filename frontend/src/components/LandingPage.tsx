@@ -1,7 +1,8 @@
 export default function LandingPage() {
     return (
         <>
-            Test
+            <div className="landingPageGreeting">Test</div>
+            <button className="greenButton">Log in</button>
         </>
     )
 }
