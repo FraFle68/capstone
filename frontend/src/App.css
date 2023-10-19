@@ -6,12 +6,10 @@
 }
 
 .landingPageGreeting {
-  width: 100px;
-  height: 150px;
-  box-sizing: border-box;
-  border: 5px solid #535bf2;
-  border-radius: 4px;
-  background-color: #888888;
+  background-image: url("./assets/fg4_borders_simple.png");
+  background-color: transparent;
+  width: 501px;
+  height: 500px;
   resize: none;
 }
 
