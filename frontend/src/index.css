@@ -26,9 +26,13 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: row;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url("./assets/view-castle-with-nature-landscape.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1 {

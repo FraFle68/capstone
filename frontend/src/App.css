@@ -5,6 +5,25 @@
   text-align: center;
 }
 
+.landingPageGreeting {
+  background-image: url("./assets/fg4_borders_simple.png");
+  background-color: transparent;
+  width: 501px;
+  height: 500px;
+  resize: none;
+}
+
+.greenButton {
+  background-image: url("./assets/fg4_buttonGreen1_Up.png");
+  background-color: transparent;
+  border: none;
+  height: 140px;
+  width: 144px;
+}
+.greenButton:hover {
+  background-image: url("./assets/fg4_buttonGreen1_Over.png");
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
