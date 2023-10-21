@@ -15,7 +15,7 @@ export default function CharacterPage() {
                     </div>
                     <div>
                         <div>
-                            <img typeof="image/png" src={imageToAdd}/>
+                            <img alt="" typeof="image/png" src={imageToAdd}/>
                             Gandalf
                             <input type="radio" defaultChecked={false} name="job" value="warrior"/>Warrior
                             <input type="radio" defaultChecked={true} name="job" value="mage"/>Mage
