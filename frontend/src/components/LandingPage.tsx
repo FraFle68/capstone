@@ -1,7 +1,10 @@
+import './LandingPage.css'
+
 export default function LandingPage() {
     function login() {
         const host: string = window.location.host === 'localhost:5173' ? 'http://localhost:8080' : window.location.host
         window.open(host + '/oauth2/authorization/github', '_blank')
+
     }
 
     return (
