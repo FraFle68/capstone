@@ -1,0 +1,31 @@
+.characterPage {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.characterPictureFrame {
+    background-image: url("../assets/fg4_borders_leather.png");
+    background-color: transparent;
+    width: 502px;
+    height: 502px;
+    resize: none;
+    margin: 20px;
+}
+
+.characterPageGreeting {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.characterPageButton {
+    align-self: flex-end;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.disabled {
+    cursor: not-allowed;
+}

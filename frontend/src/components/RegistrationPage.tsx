@@ -21,7 +21,8 @@ export default function RegistrationPage() {
                             <form><h2>
                                 <label>Your avatars name: </label>
                                 <input type="text" name="name"/>
-                                <input type="radio" name="job" value="warrior"/>Warrior
+                                Job:
+                                <input type="radio" name="job" value="warrior"/>Warrior 
                                 <input type="radio" name="job" value="mage"/>Mage</h2>
                                 <button>save</button>
                             </form>
