@@ -1,10 +1,21 @@
 import './LandingPage.css'
+import {useNavigate} from "react-router-dom";
 
-export default function LandingPage() {
+type LandingPageProps = {
+    user?: string
+}
+
+export default function LandingPage(props: LandingPageProps) {
+
+    const navigate = useNavigate()
+
     function login() {
         const host: string = window.location.host === 'localhost:5173' ? 'http://localhost:8080' : window.location.host
-        window.open(host + '/oauth2/authorization/github', '_blank')
+        window.open(host + '/oauth2/authorization/github', '_self')
+    }
 
+    if (props.user !== undefined && props.user !=="anonymousUser") {
+        navigate("/characterpage")
     }
 
     return (
