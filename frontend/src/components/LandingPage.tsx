@@ -1,4 +1,23 @@
-export default function LandingPage() {
+import './LandingPage.css'
+import {useNavigate} from "react-router-dom";
+
+type LandingPageProps = {
+    user?: string
+}
+
+export default function LandingPage(props: LandingPageProps) {
+
+    const navigate = useNavigate()
+
+    function login() {
+        const host: string = window.location.host === 'localhost:5173' ? 'http://localhost:8080' : window.location.host
+        window.open(host + '/oauth2/authorization/github', '_self')
+    }
+
+    if (props.user !== undefined && props.user !=="anonymousUser") {
+        navigate("/characterpage")
+    }
+
     return (
         <div className="landingPage">
             <div className="landingPageGreetingFrame">
@@ -13,7 +32,7 @@ export default function LandingPage() {
                         There seems to be nobody who is able to stop the chaos.</p>
                     <p>
                         But there is hope. Rumors are circulating about a potion
-                        of power hidden in the dungeon of an ancient wizard. They promise that he
+                        of power hidden in the dungeon of an ancient wizard. They promise that the
                         person who drinks this potion will be able to save the world.
                     </p>
                     <p>
@@ -23,7 +42,7 @@ export default function LandingPage() {
                 </div>
             </div>
             <div className="landingPageButton">
-                <button className="greenButton">Log in</button>
+                <button className="greenButton" onClick={login}>Login<br/>with<br/>GitHub</button>
             </div>
         </div>
     )

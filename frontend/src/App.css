@@ -1,28 +1,10 @@
-.landingPage {
-  display: flex;
-  justify-content: space-between;
-  height: 100vh;
-}
-
-.landingPageGreetingFrame {
-  background-image: url("./assets/fg4_borders_simple.png");
+.mainFrame {
+  background-image: url("./assets/fg4_borders_01_03.png");
   background-color: transparent;
-  width: 501px;
-  height: 500px;
+  width: 984px;
+  height: 623px;
   resize: none;
   margin: 20px;
-}
-
-.landingPageGreeting {
-  margin: 30px;
-
-  text-align: center;
-}
-
-.landingPageButton {
-  align-self: flex-end;
-  margin-right: 20px;
-  text-align: center;
 }
 
 .greenButton {
