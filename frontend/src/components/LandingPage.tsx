@@ -10,7 +10,7 @@ export default function LandingPage(props: LandingPageProps) {
     const navigate = useNavigate()
 
     function login() {
-        const host: string = window.location.host === 'localhost:5173' ? 'http://localhost:8080' : window.location.host
+        const host: string = window.location.host === 'localhost:5173' ? 'http://localhost:8080' : ""
         window.open(host + '/oauth2/authorization/github', '_self')
     }
 
