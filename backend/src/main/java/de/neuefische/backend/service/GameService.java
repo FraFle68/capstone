@@ -24,7 +24,7 @@ public class GameService {
     public GameMap getMap(String id) {
         Optional<GameMap> savedMap = gameRepository.findById(id);
         GameMap gameMap = savedMap.orElseGet(() ->
-                new GameMap(id, DungeonCreator.createDungeon(50, 50, 0), new Vector2d(0, 0)));
+                new GameMap(id, DungeonCreator.createDungeon(50, 50, 0, roomRepository.findAll()), new Vector2d(0, 0)));
         gameRepository.save(gameMap);
         return gameMap;
     }
