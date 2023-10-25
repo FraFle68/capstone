@@ -8,18 +8,22 @@ import java.util.Random;
 
 public class DungeonCreator {
 
+    private DungeonCreator() {}
+
     static Random random = new Random();
 
     private static int[][] createRooms(Dungeon map, List<Room> rooms) {
-        int hSize = map.tileMap.length;
-        int vSize = map.tileMap[0].length;
-        int[][] tileMap = new int[hSize][vSize];
+        int vSize = map.tileMap.length;
+        int hSize = map.tileMap[0].length;
+        int[][] tileMap = new int[vSize][hSize];
         for (int i = 0; i < 50; i++) {
             Room newRoom = rooms.get(random.nextInt(rooms.size()));
-            Vector2d position = new Vector2d(random.nextInt(hSize - newRoom.getHSize() - 1) + 1, random.nextInt(vSize - newRoom.getVSize() - 1) + 1);
+            Vector2d position = new Vector2d(
+                    random.nextInt(hSize - newRoom.getHSize() - 2) + 1,
+                    random.nextInt(vSize - newRoom.getVSize() - 2) + 1);
             boolean possiblePlace = true;
-            for (int k = 0; k < newRoom.getHSize() + 2; k++) {
-                for (int l = 0; l < newRoom.getVSize() + 2; l++) {
+            for (int k = position.getY() - 1; k < position.getY() + newRoom.getVSize() + 2; k++) {
+                for (int l = position.getX() - 1; l < position.getX() + newRoom.getHSize() + 2; l++) {
                     if (tileMap[k][l] == 1) {
                         possiblePlace = false;
                         break;
@@ -30,13 +34,15 @@ public class DungeonCreator {
                 }
             }
             if (possiblePlace) {
-                for (int k = position.getX(); k < position.getX() + newRoom.getHSize(); k++) {
-                    for (int l = position.getY(); l < position.getY() + newRoom.getVSize(); l++) {
+                for (int k = position.getY(); k < position.getY() + newRoom.getVSize(); k++) {
+                    for (int l = position.getX(); l < position.getX() + newRoom.getHSize(); l++) {
                         tileMap[k][l] = 1;
                     }
                 }
             }
         }
+
+
         return tileMap;
     }
 

@@ -33,8 +33,11 @@ export default function CharacterPage(props: Props) {
 
 
     function startGame() {
-        axios.get("/api/game/" + props.user).then(response => console.log(response.data))
+
+
+        navigate("/gamepage")
     }
+
 
 
     function saveCharacter(newAvatar: NewAvatar) {

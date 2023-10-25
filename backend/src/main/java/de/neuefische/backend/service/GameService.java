@@ -1,6 +1,5 @@
 package de.neuefische.backend.service;
 
-import de.neuefische.backend.game.core.Room;
 import de.neuefische.backend.game.core.Vector2d;
 import de.neuefische.backend.game.dungeon.DungeonCreator;
 import de.neuefische.backend.model.GameMap;

@@ -5,6 +5,7 @@ import RegistrationPage from "./components/RegistrationPage.tsx";
 import CharacterPage from "./components/CharacterPage.tsx";
 import {useState} from "react";
 import axios from "axios";
+import GamePage from "./components/GamePage.tsx";
 
 function App() {
 
@@ -21,9 +22,10 @@ function App() {
     return (
         <>
             <Routes>
-              <Route path="/" element={<LandingPage user={user}/>}/>
-              <Route path="/registration" element={<RegistrationPage user={user}/>}/>
-              <Route path="/characterpage" element={<CharacterPage user={user}/>}/>
+                <Route path="/" element={<LandingPage user={user}/>}/>
+                <Route path="/registration" element={<RegistrationPage user={user}/>}/>
+                <Route path="/characterpage" element={<CharacterPage user={user}/>}/>
+                <Route path="/gamepage" element={<GamePage user={user}/>}/>
             </Routes>
         </>
     )
