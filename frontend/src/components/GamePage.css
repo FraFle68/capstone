@@ -1,0 +1,11 @@
+.dungeonRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
+.dungeonColumn {
+    display: flex;
+    flex-direction: column;
+}

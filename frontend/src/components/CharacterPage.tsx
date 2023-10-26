@@ -13,9 +13,7 @@ export default function CharacterPage(props: Props) {
     const [avatarNameCharacterPage, setAvatarNameCharacterPage] = useState("")
     const [jobCharacterPage, setJobCharacterPage] = useState("")
     const navigate = useNavigate()
-    function startGame() {
-        //
-    }
+
 
     const fetchData = () => {
         axios.get("/api/character/" + props.user)
@@ -34,7 +32,11 @@ export default function CharacterPage(props: Props) {
     }, [])
 
 
-    if (avatar === null) navigate("/registration")
+    function startGame() {
+
+
+        navigate("/gamepage")
+    }
 
 
 
@@ -66,6 +68,9 @@ export default function CharacterPage(props: Props) {
     function onJobChange(event: ChangeEvent<HTMLInputElement>) {
         setJobCharacterPage(event.target.value)
     }
+    
+    if (avatar === null) navigate("/registration")
+
 
     return (
         <div className="characterPage">
@@ -105,7 +110,7 @@ export default function CharacterPage(props: Props) {
                 </div>
             </div>
             <div className="characterPageButton">
-                <button disabled={true} className= "disabled greenButton" onClick={startGame}>Enter<br/><br/>Dungeon</button>
+                <button className= "greenButton" onClick={startGame}>Enter<br/><br/>Dungeon</button>
             </div>
         </div>
     )
