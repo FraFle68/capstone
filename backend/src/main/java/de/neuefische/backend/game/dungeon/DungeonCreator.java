@@ -13,8 +13,11 @@ public class DungeonCreator {
     @SuppressWarnings("java:S2245")
     static Random random = new Random();
     static int[][] tileMap;
+    static int vSize;
+    static int hSize;
 
     private static void createCorridor(Vector2d actualPosition) {
+
         int hPos = actualPosition.getX();
         int vPos = actualPosition.getY();
         tileMap[vPos][hPos] = 2;
@@ -47,13 +50,7 @@ public class DungeonCreator {
         while (!possibleNextPosition.isEmpty());
     }
 
-    private static int[][] createRooms(Dungeon map, List<Room> rooms) {
-
-        int vSize = map.tileMap.length;
-        int hSize = map.tileMap[0].length;
-        tileMap = new int[vSize][hSize];
-
-        // place given Rooms randomly and apart from each other in the dungeon
+    private static void addRooms(List<Room> rooms) {
         for (int i = 0; i < 50; i++) {
             Room newRoom = rooms.get(random.nextInt(rooms.size()));
             Vector2d position = new Vector2d(
@@ -79,8 +76,9 @@ public class DungeonCreator {
                 }
             }
         }
+    }
 
-        // place randomly shaped corridors between the rooms
+    private static void addCorridors() {
         List<Vector2d> possibleCorridorFields = new ArrayList<>();
         do {
             possibleCorridorFields.clear();
@@ -97,8 +95,9 @@ public class DungeonCreator {
                 createCorridor(firstCorridorField);
             }
         } while (!possibleCorridorFields.isEmpty());
+    }
 
-        //make passages between rooms and corridors
+    private static void addDorways() {
         List<Integer> positionGroups = new ArrayList<>();
         for (int i = 1; i < tileMap.length - 1; i++) {
             for (int j = 1; j < tileMap[0].length - 1; j++) {
@@ -111,7 +110,6 @@ public class DungeonCreator {
                     }
                 }
             }
-
         }
         for (int i = 1; i < tileMap[0].length - 1; i++) {
             for (int j = 1; j < tileMap.length - 1; j++) {
@@ -124,8 +122,18 @@ public class DungeonCreator {
                     }
                 }
             }
-
         }
+    }
+
+    private static int[][] createRooms(Dungeon map, List<Room> rooms) {
+
+        vSize = map.tileMap.length;
+        hSize = map.tileMap[0].length;
+        tileMap = new int[vSize][hSize];
+
+        addRooms(rooms);
+        addCorridors();
+        addDorways();
 
         return tileMap;
     }
@@ -143,6 +151,4 @@ public class DungeonCreator {
         map.contentMap = createContent(map);
         return map;
     }
-
-
 }
