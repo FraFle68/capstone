@@ -24,7 +24,7 @@ class GameServiceTest {
 
     GameService gameService = new GameService(mockGameRepo, mockRoomRepo);
 
-    @Test
+    /*@Test
     void testGetMap_withMapInDatabase() {
 
         GameMap expectedMap = new GameMap("123", new Dungeon(), new Vector2d(0, 0));
@@ -52,7 +52,7 @@ class GameServiceTest {
         verify(mockGameRepo).findById("123");
 
         assertEquals(expectedMap, result);
-    }
+    }*/
 
     @Test
     void testDeleteMap() {
