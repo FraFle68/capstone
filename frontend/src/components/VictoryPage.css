@@ -1,0 +1,14 @@
+.victoryPage {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.victoryPageContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 60px;
+    margin-top: 40px;
+}

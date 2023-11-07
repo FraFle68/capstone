@@ -5,7 +5,9 @@ import RegistrationPage from "./components/RegistrationPage.tsx";
 import CharacterPage from "./components/CharacterPage.tsx";
 import {useState} from "react";
 import axios from "axios";
-import GamePage from "./components/GamePage.tsx";
+import Game from "./components/Game.tsx";
+import ChangePosition from "./components/ChangePosition.tsx"
+import VictoryPage from "./components/VictoryPage.tsx";
 
 function App() {
 
@@ -25,7 +27,9 @@ function App() {
                 <Route path="/" element={<LandingPage user={user}/>}/>
                 <Route path="/registration" element={<RegistrationPage user={user}/>}/>
                 <Route path="/characterpage" element={<CharacterPage user={user}/>}/>
-                <Route path="/gamepage" element={<GamePage user={user}/>}/>
+                <Route path="/gamepage" element={<Game user={user}/>}/>
+                <Route path="/changeposition/:params" element={<ChangePosition user={user}/>}/>
+                <Route path="/victory" element={<VictoryPage/>}/>
             </Routes>
         </>
     )

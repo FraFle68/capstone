@@ -1,11 +1,9 @@
 package de.neuefische.backend.controller;
 
+import de.neuefische.backend.game.core.Vector2d;
 import de.neuefische.backend.model.GameMap;
 import de.neuefische.backend.service.GameService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -23,4 +21,13 @@ public class GameController {
         return gameService.getMap(id);
     }
 
+    @DeleteMapping("{id}")
+    public void deleteMap(@PathVariable String id) {
+        gameService.deleteMap(id);
+    }
+
+    @PutMapping("changeposition/{id}")
+    public GameMap changePosition(@PathVariable String id, @RequestBody Vector2d position) {
+        return gameService.changePosition(id, position);
+    }
 }
