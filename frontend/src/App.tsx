@@ -8,6 +8,7 @@ import axios from "axios";
 import Game from "./components/Game.tsx";
 import ChangePosition from "./components/ChangePosition.tsx"
 import VictoryPage from "./components/VictoryPage.tsx";
+import GetItem from "./components/GetItem.tsx";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/characterpage" element={<CharacterPage user={user}/>}/>
                 <Route path="/gamepage" element={<Game user={user}/>}/>
                 <Route path="/changeposition/:params" element={<ChangePosition user={user}/>}/>
+                <Route path="/getitem/:params" element={<GetItem user={user}/>}/>
                 <Route path="/victory" element={<VictoryPage/>}/>
             </Routes>
         </>

@@ -6,7 +6,6 @@ import de.neuefische.backend.game.dungeon.DungeonCreator;
 import de.neuefische.backend.model.GameMap;
 import de.neuefische.backend.repository.GameRepository;
 import de.neuefische.backend.repository.RoomRepository;
-import java.util.Arrays;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -59,6 +58,22 @@ public class GameService {
             return gameRepository.save(newMap);
         }
         return new GameMap("1", new Dungeon(), new Vector2d(0, 0));
+    }
 
+    public GameMap getItem(String id, Vector2d position) {
+        GameMap newMap;
+        Dungeon newDungeon;
+        int[][] contentMap;
+        Optional<GameMap> actualMap = gameRepository.findById(id);
+        if (actualMap.isPresent()) {
+            newDungeon = actualMap.get().dungeon();
+            contentMap = actualMap.get().dungeon().getContentMap();
+            contentMap[position.getY()][position.getX()] = 0;
+            newDungeon.setContentMap(contentMap);
+            newMap = new GameMap(actualMap.get().id(), newDungeon, actualMap.get().position());
+
+            return gameRepository.save(newMap);
+        }
+        return new GameMap("1", new Dungeon(), new Vector2d(0, 0));
     }
 }

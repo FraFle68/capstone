@@ -30,4 +30,10 @@ public class GameController {
     public GameMap changePosition(@PathVariable String id, @RequestBody Vector2d position) {
         return gameService.changePosition(id, position);
     }
+
+    @PutMapping("getitem/{id}")
+    public GameMap getItem(@PathVariable String id, @RequestBody Vector2d position) {
+        return gameService.getItem(id, position);
+    }
+
 }

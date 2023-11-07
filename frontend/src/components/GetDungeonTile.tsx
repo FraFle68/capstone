@@ -14,7 +14,7 @@ type GetDungeonTileProbs = {
 export default function GetDungeonTile(props: GetDungeonTileProbs) {
 
     const linkAddressTile: string = "../changeposition/" + props.position.x + "-" + props.position.y
-    const linkAddressItem: string = "../getItem/" + props.content
+    const linkAddressItem: string = "../getitem/" + props.content + "-" + props.position.x + "-" + props.position.y
     const linkAddressPotion: string = "../victory/"
 
     return (
