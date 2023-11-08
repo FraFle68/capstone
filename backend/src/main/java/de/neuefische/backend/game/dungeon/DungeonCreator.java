@@ -140,8 +140,36 @@ public class DungeonCreator {
 
     private static int[][] createContent(Dungeon map) {
         int[][] contentMap = new int[map.contentMap.length][map.contentMap[0].length];
-        contentMap[0][0] = 7;
+        int x;
+        int y;
+        boolean check = false;
+        for (int i = 0; i < 10; i++) {
+            do {
+                y = random.nextInt(contentMap.length);
+                x = random.nextInt(contentMap[0].length);
+                if (map.tileMap[y][x] == 1) {
+                    check = true;
+                }
+            } while (!check);
+            contentMap[y][x] = 1;
+            check = false;
+        }
+        do {
+            y = random.nextInt(contentMap.length);
+            x = random.nextInt(contentMap[0].length);
+            if (map.tileMap[y][x] == 1 && map.contentMap[y][x] == 0) {
+                check = true;
+            }
+        } while (!check);
+        contentMap[y][x] = 42;
         return contentMap;
+    }
+
+    private static Vector2d createStartPosition(Dungeon map) {
+
+        Vector2d position = new Vector2d(25, 25);
+
+        return position;
     }
 
     public static Dungeon createDungeon(int hSize, int vSize, int floor, List<Room> rooms) {
@@ -149,6 +177,9 @@ public class DungeonCreator {
         Dungeon map = new Dungeon(vSize, hSize, floor);
         map.tileMap = createRooms(map, rooms);
         map.contentMap = createContent(map);
+        Vector2d startPosition = createStartPosition(map);
+        map.contentMap[startPosition.getY()][startPosition.getX()] = 99;
+        map.position = startPosition;
         return map;
     }
 }

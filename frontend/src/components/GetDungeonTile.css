@@ -1,0 +1,9 @@
+.imagePositioner {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+}
+
+.imagePositioner img {
+    position: absolute;
+}

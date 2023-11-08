@@ -1,6 +1,7 @@
 package de.neuefische.backend.game.dungeon;
 
 
+import de.neuefische.backend.game.core.Vector2d;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,7 +12,7 @@ public class Dungeon {
 
     int[][] tileMap;
     int[][] contentMap;
-
+    Vector2d position;
 
     public Dungeon(int vSize, int hSize, int floor) {
         this.floor = floor;

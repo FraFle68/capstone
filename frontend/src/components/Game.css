@@ -1,0 +1,26 @@
+.gamePage {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.gameBorder {
+    background-image: url("../assets/fg4_borders_simple750.png");
+    background-color: transparent;
+
+    width: 750px;
+    height: 750px;
+    margin: 20px;
+}
+
+
+
+.gameContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 3px;
+    margin-left: -65px;
+}
