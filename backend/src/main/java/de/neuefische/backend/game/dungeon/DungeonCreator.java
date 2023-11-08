@@ -97,7 +97,7 @@ public class DungeonCreator {
         } while (!possibleCorridorFields.isEmpty());
     }
 
-    private static void addDorways() {
+    private static void addDoorways() {
         List<Integer> positionGroups = new ArrayList<>();
         for (int i = 1; i < tileMap.length - 1; i++) {
             for (int j = 1; j < tileMap[0].length - 1; j++) {
@@ -133,7 +133,7 @@ public class DungeonCreator {
 
         addRooms(rooms);
         addCorridors();
-        addDorways();
+        addDoorways();
 
         return tileMap;
     }
@@ -166,8 +166,10 @@ public class DungeonCreator {
     }
 
     private static Vector2d createStartPosition(Dungeon map) {
-
-        Vector2d position = new Vector2d(25, 25);
+        Vector2d position;
+        do {
+            position = new Vector2d(random.nextInt(50), random.nextInt(50));
+        } while (map.tileMap[position.getY()][position.getX()] == 0);
 
         return position;
     }

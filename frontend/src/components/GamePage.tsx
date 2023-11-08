@@ -40,7 +40,7 @@ export default function GamePage(props: GameProps) {
     }
 
     return (
-        <div style={{width: 3300}} className="dungeonColumn">
+        <div style={{width: 3300, overflowX: "scroll"}} className="dungeonColumn">
             {dungeon && helperArray.map(index => <GetDungeonRow position={dungeon.position} dungeonRow={dungeon.tileMap[index]} dungeonContentRow={dungeon.contentMap[index]}/>)}
             <button onClick={resetDungeon}>New Dungeon</button>
         </div>
