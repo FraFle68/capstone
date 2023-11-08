@@ -9,6 +9,7 @@ import Game from "./components/Game.tsx";
 import ChangePosition from "./components/ChangePosition.tsx"
 import VictoryPage from "./components/VictoryPage.tsx";
 import GetItem from "./components/GetItem.tsx";
+import GamePage from "./components/GamePage.tsx";
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/changeposition/:params" element={<ChangePosition user={user}/>}/>
                 <Route path="/getitem/:params" element={<GetItem user={user}/>}/>
                 <Route path="/victory" element={<VictoryPage user={user}/>}/>
+                <Route path="/cheat" element={<GamePage user={user}/>}/>
             </Routes>
         </>
     )
