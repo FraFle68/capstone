@@ -45,9 +45,17 @@ export default function Game(props: GameProps) {
     }
 
     return (
-        <div>
-            {dungeon && counter.map(index =>
-                <GetDungeonRow position={{x: dungeon.position.x, y: CheckIndex(index)}} dungeonRow={dungeon.tileMap[CheckIndex(index)]} dungeonContentRow={dungeon.contentMap[CheckIndex(index)]}/>)}
-        </div>
+        <>
+            <div className="gamePage">
+                <div className="gameBorder">
+                    <div className="gameContent">
+                        {dungeon && counter.map(index =>
+                            <GetDungeonRow key={index} position={{x: dungeon.position.x, y: CheckIndex(index)}}
+                                           dungeonRow={dungeon.tileMap[CheckIndex(index)]}
+                                           dungeonContentRow={dungeon.contentMap[CheckIndex(index)]}/>)}
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }

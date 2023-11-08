@@ -31,7 +31,7 @@ function App() {
                 <Route path="/gamepage" element={<Game user={user}/>}/>
                 <Route path="/changeposition/:params" element={<ChangePosition user={user}/>}/>
                 <Route path="/getitem/:params" element={<GetItem user={user}/>}/>
-                <Route path="/victory" element={<VictoryPage/>}/>
+                <Route path="/victory" element={<VictoryPage user={user}/>}/>
             </Routes>
         </>
     )

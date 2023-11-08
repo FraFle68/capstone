@@ -1,6 +1,20 @@
 import "./VictoryPage.css"
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
-export default function VictoryPage() {
+type VictoryPageProbs = {
+    user?: string
+}
+
+export default function VictoryPage(props: VictoryPageProbs) {
+
+    const navigate = useNavigate()
+
+    axios.delete("/api/game/" + props.user)
+
+    function restartGame() {
+        navigate("/gamepage")
+    }
 
     return (
         <>
@@ -11,8 +25,8 @@ export default function VictoryPage() {
                             <h1>Victory !!!</h1>
                             <h2>
                                 You found the Potion of Power and therefore you are able to safe the world.
-
                             </h2>
+                            <button onClick={restartGame}>Start new Game</button>
                         </div>
                         <div>
 
