@@ -28,8 +28,12 @@ export default function GetItem(props: getItemProps) {
         })
 
     return (
-        <>Waiting for the other players</>
+        <>
+            <div className="gamePage">
+                <div className="gameBorder">
+
+                </div>
+            </div>
+        </>
     )
-
-
 }

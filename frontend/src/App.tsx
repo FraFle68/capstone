@@ -18,7 +18,6 @@ function App() {
     function me() {
         axios.get("/api/users/me")
             .then(response => {setUser(response.data)})
-
     }
 
     me()
