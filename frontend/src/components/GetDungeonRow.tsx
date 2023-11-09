@@ -6,8 +6,6 @@ type GetDungeonRowProbs = {
     dungeonContentRow: number[]
 }
 
-
-
 export default function GetDungeonRow(props: GetDungeonRowProbs) {
 
     const counter: number[] = []
@@ -15,8 +13,6 @@ export default function GetDungeonRow(props: GetDungeonRowProbs) {
     for (let i = 0; i < 11; i++) {
         counter[i] = props.position.x - 5 + i
     }
-
-
 
     function CheckIndex(index: number) {
         if(index < 0) index = 0
@@ -33,7 +29,7 @@ export default function GetDungeonRow(props: GetDungeonRowProbs) {
 
     return (
         <div style={{height: 64}} className="dungeonRow">
-            {counter.map(index => <GetDungeonTile position={getXPosition(index)} tile={props.dungeonRow[CheckIndex(index)]} content={props.dungeonContentRow[CheckIndex(index)]}/>)}
+            {counter.map(index => <GetDungeonTile key={index} position={getXPosition(index)} tile={props.dungeonRow[CheckIndex(index)]} content={props.dungeonContentRow[CheckIndex(index)]}/>)}
         </div>
     )
 }

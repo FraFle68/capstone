@@ -24,8 +24,6 @@ export default function Game(props: GameProps) {
         fetchDungeon()
     }, [])
 
-
-
     const counter: number[] = []
     console.log(dungeon)
     for (let i = 0; i < 11; i++) {

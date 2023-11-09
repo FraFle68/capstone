@@ -5,7 +5,6 @@ import de.neuefische.backend.model.GameMap;
 import de.neuefische.backend.service.GameService;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping("/api/game")
 public class GameController {
@@ -35,5 +34,4 @@ public class GameController {
     public GameMap getItem(@PathVariable String id, @RequestBody Vector2d position) {
         return gameService.getItem(id, position);
     }
-
 }

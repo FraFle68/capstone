@@ -31,5 +31,4 @@ public class CharacterController {
     public Avatar editCharacter(@RequestBody NewCharacter newCharacter) {
         return characterService.save(newCharacter);
     }
-
 }

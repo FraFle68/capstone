@@ -13,7 +13,6 @@ export default function RegistrationPage(props: Props) {
     const [job, setJob] = useState("")
     const navigate = useNavigate()
     function saveCharacter(newAvatar: NewAvatar) {
-
         axios.post("/api/character/new", newAvatar)
             .then(() => navigate("/characterpage"))
             .catch((error) => {

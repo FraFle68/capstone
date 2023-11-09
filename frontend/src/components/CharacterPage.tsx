@@ -14,7 +14,6 @@ export default function CharacterPage(props: Props) {
     const [jobCharacterPage, setJobCharacterPage] = useState("")
     const navigate = useNavigate()
 
-
     const fetchData = () => {
         axios.get("/api/character/" + props.user)
             .then(response => {
@@ -31,24 +30,19 @@ export default function CharacterPage(props: Props) {
         fetchData()
     }, [])
 
-
     function startGame() {
-
-
         navigate("/gamepage")
     }
 
 
 
     function saveCharacter(newAvatar: NewAvatar) {
-
         axios.put("/api/character/edit", newAvatar)
             .then(() => fetchData())
             .catch((error) => {
                 alert('Fehler:' + error.response.data)
                 navigate("/")
             })
-
     }
 
     function onFormSubmit() {
@@ -62,7 +56,6 @@ export default function CharacterPage(props: Props) {
 
     function onNameChange(event: ChangeEvent<HTMLInputElement>) {
         setAvatarNameCharacterPage(event.target.value)
-
     }
 
     function onJobChange(event: ChangeEvent<HTMLInputElement>) {
@@ -71,7 +64,6 @@ export default function CharacterPage(props: Props) {
     
     if (avatar === null) navigate("/registration")
 
-
     return (
         <div className="characterPage">
             <div className="characterPictureFrame">
@@ -79,7 +71,6 @@ export default function CharacterPage(props: Props) {
                     <div>
                         <h2>Adventurer Licence</h2>
                     </div>
-
                     <div className="cardBoxRow">
                         <img alt="" typeof="image/png" src={imageToAdd}/>
                         <div className="cardBoxColumn">
@@ -91,7 +82,6 @@ export default function CharacterPage(props: Props) {
                             <div><input type="radio" checked={jobCharacterPage === "warrior"} name="job" value="warrior" onChange={onJobChange}/>Warrior</div>
                             <div><input type="radio" checked={jobCharacterPage === "mage"} name="job" value="mage" onChange={onJobChange}/>Mage</div>
                         </div>
-
                     </div>
                     <div className="cardBoxRow">
                         <div>
@@ -106,7 +96,6 @@ export default function CharacterPage(props: Props) {
                         </div>
                     </div>
                     <div style={{textAlign: "end"}}><button onClick={onFormSubmit}>save</button></div>
-
                 </div>
             </div>
             <div className="characterPageButton">

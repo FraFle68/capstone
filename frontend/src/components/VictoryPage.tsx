@@ -29,7 +29,6 @@ export default function VictoryPage(props: VictoryPageProbs) {
                             <button onClick={restartGame}>Start new Game</button>
                         </div>
                         <div>
-
                         </div>
                     </div>
                 </div>

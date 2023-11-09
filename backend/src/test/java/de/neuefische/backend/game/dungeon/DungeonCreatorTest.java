@@ -9,11 +9,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DungeonCreatorTest {
-
-
-
-
-
     @Test
     void testCreateDungeonWithStartPosition() {
         List<Room> rooms = new ArrayList<>();
