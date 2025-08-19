@@ -34,4 +34,4 @@ Dieses Projekt wurde im Rahmen eines Bootcamps erstellt und dient ausschließlic
 ---
 
 **Kontakt:**  
-Fragen oder Feedback gerne per GitHub-Issue oder direkt an [deine E-Mail-Adresse einfügen].
+Fragen oder Feedback gerne per GitHub-Issue oder direkt an frank.fleischer@wolfsburg.de.
